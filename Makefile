@@ -4,31 +4,31 @@ CC_FLAGS=-Wall -Wextra -Werror
 
 SRCS=Push_swap.c
 
-LST_OBJS=$(SRCS:.c=.o)
-DEPS=$(SRCS:.c=.d)
-
 DIR_OBJS=.objs
-
-OBJS=$(addprefix $(DIR_OBJS)/,$(LST_OBJS)) 
+DIR_DEPS=.deps
+OBJS=$(SRCS:%.c=$(DIR_OBJS)/%.o)
+DEPS=$(SRCS:%.c=$(DIR_DEPS)/%.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	echo "Compiling Push_swap"
+	echo "Compiling Push_swap..."
 	$(CC) $(CC_FLAGS) -o $@ $(OBJS)
 	
 -include $(DEPS)
-$(DIR_OBJS)/%.o: %.c | $(DIR_OBJS)
-	$(CC) $(CC_FLAGS) -c -o $@ $< -MMD
+$(DIR_OBJS)/%.o: %.c | $(DIR_OBJS) $(DIR_DEPS)
+	$(CC) $(CC_FLAGS) -MMD -MP -MF $(DIR_DEPS)/$*.d -c -o $@ $<
 
 $(DIR_OBJS):
 	mkdir -p $(DIR_OBJS)
 
+$(DIR_DEPS):
+	mkdir -p $(DIR_DEPS)
 
 clean:
 	echo "Removing files..."
 	rm -rf $(DIR_OBJS)
-	rm -f *.d
+	rm -rf $(DIR_DEPS)
 
 fclean: clean
 	echo "Removing executable..."
