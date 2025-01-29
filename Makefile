@@ -14,13 +14,13 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	echo "Compiling Push_swap..."
-	$(CC) $(CC_FLAGS) -o $@ $(OBJS) ./Libft/libft.a
+	$(CC) $(CC_FLAGS) -o $@ $(OBJS) ./libft/libft.a
 
 	
 -include $(DEPS)
 $(DIR_OBJS)/%.o: %.c | $(DIR_OBJS) $(DIR_DEPS)
 	$(CC) $(CC_FLAGS) -MMD -MP -MF $(DIR_DEPS)/$*.d -c -o $@ $<
-	$(MAKE) -C ./Libft
+	$(MAKE) -C ./libft
 
 $(DIR_OBJS):
 	mkdir -p $(DIR_OBJS)
@@ -30,13 +30,13 @@ $(DIR_DEPS):
 
 clean:
 	echo "Removing files..."
-	$(MAKE) -C ./Libft fclean
+	$(MAKE) -C ./libft fclean
 	rm -rf $(DIR_OBJS)
 	rm -rf $(DIR_DEPS)
 
 fclean: clean
 	echo "Removing executable..."
-	$(MAKE) -C ./Libft fclean
+	$(MAKE) -C ./libft fclean
 	rm -f $(NAME)
 	
 
