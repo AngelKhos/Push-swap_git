@@ -2,7 +2,8 @@ NAME=Push_swap
 CC=cc
 CC_FLAGS=-Wall -Wextra -Werror
 
-SRCS=Push_swap.c
+SRCS=push_swap.c\
+	operator.c
 
 DIR_OBJS=.objs
 DIR_DEPS=.deps
@@ -19,7 +20,7 @@ $(NAME): $(OBJS)
 -include $(DEPS)
 $(DIR_OBJS)/%.o: %.c | $(DIR_OBJS) $(DIR_DEPS)
 	$(CC) $(CC_FLAGS) -MMD -MP -MF $(DIR_DEPS)/$*.d -c -o $@ $<
-	@$(MAKE) -C ./Libft
+	$(MAKE) -C ./Libft
 
 $(DIR_OBJS):
 	mkdir -p $(DIR_OBJS)

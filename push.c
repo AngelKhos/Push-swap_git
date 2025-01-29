@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_swap.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 15:17:28 by authomas          #+#    #+#             */
-/*   Updated: 2025/01/27 15:34:12 by authomas         ###   ########.fr       */
+/*   Created: 2025/01/29 09:34:46 by authomas          #+#    #+#             */
+/*   Updated: 2025/01/29 09:35:08 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
+#include "push_swap.h"
+
+void	push_a(char b, char *a)
 {
-	__builtin_printf("hewwo");
-	return(0);
+}
+
+void	push_b(char a, char *b)
+{
 }
