@@ -3,27 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bde <bde@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:31:02 by authomas          #+#    #+#             */
-/*   Updated: 2025/01/29 09:36:22 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/02/07 15:39:28 by bde              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(char *any)
+void	rotate_a(t_stack **a)
 {
+    *a = (*a)->next;
+    ft_printf("ra\n");
 }
 
-void	rotate_a(char *a)
+void	rotate_b(t_stack **b)
 {
+    *b = (*b)->next;
+    ft_printf("rb\n");
 }
 
-void	rotate_b(char *b)
+void	rr(t_stack **a, t_stack **b)
 {
-}
-
-void	rr(char *a, char *b)
-{
+    *a = (*a)->next;
+    *b = (*b)->next;
+    ft_printf("rr\n");
 }

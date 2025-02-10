@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bde <bde@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:17:28 by authomas          #+#    #+#             */
-/*   Updated: 2025/01/29 14:47:00 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/02/09 18:57:57 by bde              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main(int ac, char *av)
 {
-	t_stack	a;
-	t_stack	b;
-	
+	t_head heads;
+
+	heads.a = NULL;
+	heads.b = NULL;
 	return (0);
 }

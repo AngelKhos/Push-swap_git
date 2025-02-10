@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bde <bde@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:47:31 by authomas          #+#    #+#             */
-/*   Updated: 2025/01/29 16:27:41 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/02/07 14:47:18 by bde              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	add_back(t_stack **lst, t_stack *new)
 	if (count != NULL)
 		count->next = new;
 	else
-		ft_lstadd_front(lst, new);
+		add_front(lst, new);
 }
 
 void	add_front(t_stack **lst, t_stack *new)
@@ -29,15 +29,15 @@ void	add_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
-t_stack	*set_stack(int content)
+t_stack	*set_stack(void)
 {
 	t_stack	*new;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
-	new->content = content;
-	new->prev = NULL;
-	new->next = NULL;
+	new->content = 0;
+	new->prev = new;
+	new->next = new;
 	return (new);
 }
