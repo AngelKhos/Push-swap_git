@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 09:39:45 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/08 13:43:17 by authomas         ###   ########lyon.fr   */
+/*   Created: 2025/01/29 08:53:43 by authomas          #+#    #+#             */
+/*   Updated: 2025/04/08 15:16:39 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "incs/push_swap.h"
 
-void	rra(t_stack **a)
+static void	swap(t_stack *stack)
 {
-	*a = (*a)->prev;
-	ft_printf("rra\n");
+	int tmp_content;
+	
+	tmp_content = stack->next->content;
+	stack->next->content = stack->content;
+	stack->content = tmp_content;
 }
 
-void	rrb(t_stack **b)
+void	swap_a(t_stack *a)
 {
-	*b = (*b)->prev;
-	ft_printf("rrb\n");
+	swap(a);
+	ft_printf("sa\n");
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	swap_b(t_stack *b)
 {
-	*a = (*a)->prev;
-	*b = (*b)->prev;
-	ft_printf("rrr\n");
+	swap(b);
+	ft_printf("sb\n");
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	swap(a);
+	swap(b);
+	ft_printf("ss\n");
 }

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 09:31:02 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/08 13:43:44 by authomas         ###   ########lyon.fr   */
+/*   Created: 2025/01/29 09:39:45 by authomas          #+#    #+#             */
+/*   Updated: 2025/04/08 15:16:30 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "incs/push_swap.h"
 
-void	rotate_a(t_stack **a)
+void	rra(t_stack **a)
 {
-	*a = (*a)->next;
-	ft_printf("ra\n");
+	*a = (*a)->prev;
+	ft_printf("rra\n");
 }
 
-void	rotate_b(t_stack **b)
+void	rrb(t_stack **b)
 {
-	*b = (*b)->next;
-	ft_printf("rb\n");
+	*b = (*b)->prev;
+	ft_printf("rrb\n");
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
-	*a = (*a)->next;
-	*b = (*b)->next;
-	ft_printf("rr\n");
+	*a = (*a)->prev;
+	*b = (*b)->prev;
+	ft_printf("rrr\n");
 }

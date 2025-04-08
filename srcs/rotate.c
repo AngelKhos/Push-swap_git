@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 15:17:28 by authomas          #+#    #+#             */
-/*   Updated: 2025/02/10 09:58:08 by authomas         ###   ########lyon.fr   */
+/*   Created: 2025/01/29 09:31:02 by authomas          #+#    #+#             */
+/*   Updated: 2025/04/08 15:16:34 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "incs/push_swap.h"
 
-int	main(int ac, char *av)
+void	rotate_a(t_stack **a)
 {
-	t_head	heads;
+	*a = (*a)->next;
+	ft_printf("ra\n");
+}
 
-	heads.a = NULL;
-	heads.b = NULL;
-	return (0);
+void	rotate_b(t_stack **b)
+{
+	*b = (*b)->next;
+	ft_printf("rb\n");
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	*a = (*a)->next;
+	*b = (*b)->next;
+	ft_printf("rr\n");
 }
