@@ -6,18 +6,43 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:34:46 by authomas          #+#    #+#             */
-/*   Updated: 2025/02/10 09:58:16 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/08 14:16:14 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_stack **b, t_stack **a)
+static void	push(t_stack **from, t_stack **to)
 {
-	
-	
+	t_stack *to_push;
+
+	to_push = *from;
+	if (stack_size(*from) > 1)
+	{
+		to_push->prev->next = to_push->next;
+		to_push->next->prev = to_push->prev;
+		*from = to_push->next;
+	}
+	else
+		*from = NULL;
+	if (!*to)
+	{
+		*to = to_push;
+		(*to)->next = *to;
+		(*to)->prev = *to;
+	}
+	else
+		add_front(to, to_push);
 }
 
-void	push_b(char a, char *b)
+void	push_a(t_stack **b, t_stack **a)
 {
+	push(b, a);
+	ft_printf("pa\n");
+}
+
+void	push_b(t_stack **a, t_stack **b)
+{
+	push(a, b);
+	ft_printf("pa\n");
 }

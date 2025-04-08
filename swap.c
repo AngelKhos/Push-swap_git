@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bde <bde@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 08:53:43 by authomas          #+#    #+#             */
-/*   Updated: 2025/02/09 18:53:35 by bde              ###   ########lyon.fr   */
+/*   Updated: 2025/04/08 14:14:58 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	swap(t_stack *stack)
+{
+	int tmp_content;
+	
+	tmp_content = stack->next->content;
+	stack->next->content = stack->content;
+	stack->content = tmp_content;
+}
 
 void	swap_a(t_stack *a)
 {
