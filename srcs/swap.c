@@ -6,11 +6,11 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 08:53:43 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/08 15:16:39 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/11 14:24:41 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/push_swap.h"
+#include "../incs/push_swap.h"
 
 static void	swap(t_stack *stack)
 {

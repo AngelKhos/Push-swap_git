@@ -6,14 +6,14 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:17:41 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/08 15:20:41 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/11 23:41:30 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -28,7 +28,7 @@ void	add_front(t_stack **lst, t_stack *new);
 
 ////////////////////////////////////////////////////////////////
 
-int	check_error(char **args);
+int	check_error(int ac, char **av);
 
 ////////////////////////////////////////////////////////////////
 

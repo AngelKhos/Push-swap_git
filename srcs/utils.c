@@ -6,11 +6,11 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:47:31 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/08 15:19:01 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/11 14:24:45 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/push_swap.h"
+#include "../incs/push_swap.h"
 
 void	add_back(t_stack *lst, t_stack *new)
 {

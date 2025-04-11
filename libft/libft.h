@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bde <bde@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:38:19 by authomas          #+#    #+#             */
-/*   Updated: 2025/02/07 14:06:57 by bde              ###   ########lyon.fr   */
+/*   Updated: 2025/04/12 00:49:32 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdarg.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 100
 # endif
 # if BUFFER_SIZE < 1
 #  undef BUFFER_SIZE
@@ -58,7 +58,8 @@ int		ft_strlen_pf(char *s);
 int		ft_strchr_pf(const char *s, int c);
 int		ft_isalpha(int c);
 
-int		ft_atoi(const char *nptr);
+int		ft_atol(char *s);
+int		ft_atoi(char *s);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);

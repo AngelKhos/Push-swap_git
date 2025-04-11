@@ -18,7 +18,7 @@ SRCS=srcs/main.c\
 	srcs/reverse_rotate.c\
 	srcs/rotate.c\
 	srcs/utils.c\
-	srcs/parsing.c
+	srcs/error.c
 
 LIB= libft/libft.a
 INCS= incs/push_swap.h
@@ -40,7 +40,7 @@ libft:
 
 $(NAME): $(OBJS) $(DEPS) $(INCS)
 	$(CC) $(CC_FLAGS) $(OBJS) $(LIB) -o $@
-	echo "$(BLUE) Your so_long is ready $(END)"
+	echo "$(BLUE) Your push_swap is ready $(END)"
 
 
 $(DIR_OBJS)/%.o: srcs/%.c Makefile | $(DIR_OBJS) $(DIR_DEPS) 
