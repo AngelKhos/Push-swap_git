@@ -5,60 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 14:47:31 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/11 14:24:45 by authomas         ###   ########lyon.fr   */
+/*   Created: 2025/04/12 01:46:24 by authomas          #+#    #+#             */
+/*   Updated: 2025/04/12 01:54:27 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-void	add_back(t_stack *lst, t_stack *new)
+void error_handler(t_stack *stack, char *str)
 {
-	if (!lst || !new)
-		return ;
-	lst->prev->next = new;
-	new->prev = lst->prev;
-	lst->prev = new;
-	new->next = lst;
+    free_stack(stack);
+    ft_putstr_fd(str, 2);
+    exit(EXIT_FAILURE);
 }
 
-void	add_front(t_stack **lst, t_stack *new)
+int	ft_atol(char *s, t_stack *stack)
 {
-	if (!lst || !new)
-		return ;
-	(*lst)->prev->next = new;
-	new->prev = (*lst)->prev;
-	(*lst)->prev = new;
-	new->next = *lst;
-	*lst = new;
-}
+	size_t		i;
+	long		res;
+	int			sign;
 
-t_stack	*stack_new(void)
-{
-	t_stack	*new;
-
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->content = 0;
-	new->prev = new;
-	new->next = new;
-	return (new);
-}
-
-int stack_size(t_stack *stack)
-{
-	int size;
-	t_stack *root;
-	
-	root = stack;
-	size = 1;
-	if (!root)
-		return (0);
-	while (stack->next != root)
+	res = 0;
+	i = 0;
+	sign = 1;
+	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '-' || s[i] == '+')
 	{
-		size++;
-		stack = stack->next;
+		if (s[i] == '-')
+			sign = sign * -1;
+		i++;
 	}
-	return (size);
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		res = res * 10 + (s[i] - '0');
+        if (res > INT_MAX || (res * sign) < INT_MIN)
+            error_handler(stack, "Error\n");
+		i++;
+	}
+	return (res * sign);
 }

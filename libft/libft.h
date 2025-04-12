@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:38:19 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 00:49:32 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/12 01:47:40 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int		ft_strlen_pf(char *s);
 int		ft_strchr_pf(const char *s, int c);
 int		ft_isalpha(int c);
 
-int		ft_atol(char *s);
 int		ft_atoi(char *s);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);

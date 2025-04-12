@@ -17,7 +17,7 @@ SRCS=srcs/main.c\
 	srcs/swap.c\
 	srcs/reverse_rotate.c\
 	srcs/rotate.c\
-	srcs/utils.c\
+	srcs/stack_handler.c\
 	srcs/error.c
 
 LIB= libft/libft.a

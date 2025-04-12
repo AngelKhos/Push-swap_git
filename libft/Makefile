@@ -4,7 +4,6 @@ AR=ar
 AR_ARG=-rcs
 CC_FLAGS=-Wall -Wextra -Werror
 SRCS=ft_atoi.c\
-	ft_atol.c\
 	ft_isalpha.c\
 	ft_strmapi.c\
 	ft_putnbr_fd.c\
