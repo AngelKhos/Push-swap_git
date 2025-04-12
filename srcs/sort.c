@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:27:42 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 19:24:38 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/12 20:08:45 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void solve_three(t_stack **a)
 {
-	if((*a)->prev->normalized != 3)
+	if((*a)->prev->normalized != 2)
 	{
 		if((*a)->normalized == 2)
 			rotate_a(a);
@@ -82,7 +82,8 @@ static void radix_sort(t_stack **a, t_stack **b)
 			size--;
 		}
 		i++;
-		radix_sort_b(a, b, i);
+		if (!is_rev_sort(*b))
+			radix_sort_b(a, b, i);
 	}
 	while (stack_size(*b) > 0)
 		push_a(b, a);
