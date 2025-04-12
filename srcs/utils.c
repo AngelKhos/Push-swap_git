@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 01:46:24 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 01:54:27 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/12 19:05:52 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,39 @@
 
 void error_handler(t_stack *stack, char *str)
 {
-    free_stack(stack);
-    ft_putstr_fd(str, 2);
-    exit(EXIT_FAILURE);
+	free_stack(stack);
+	ft_putstr_fd(str, 2);
+	exit(EXIT_FAILURE);
+}
+
+int is_sort(t_stack *stack)
+{
+	int i;
+
+	i = 0;
+	while(i < stack_size(stack) - 1)
+	{
+		if (stack->normalized > stack->next->normalized)
+			return (0);
+		stack = stack->next;
+		i++;
+	}
+	return (1);
+}
+
+int is_rev_sort(t_stack *stack)
+{
+	int i;
+
+	i = stack_size(stack) - 1;
+	while(i > 0)
+	{
+		if (stack->normalized < stack->next->normalized)
+			return (0);
+		stack = stack->next;
+		i++;
+	}
+	return (1);
 }
 
 int	ft_atol(char *s, t_stack *stack)
@@ -39,8 +69,8 @@ int	ft_atol(char *s, t_stack *stack)
 	while (s[i] >= '0' && s[i] <= '9')
 	{
 		res = res * 10 + (s[i] - '0');
-        if (res > INT_MAX || (res * sign) < INT_MIN)
-            error_handler(stack, "Error\n");
+		if (res > INT_MAX || (res * sign) < INT_MIN)
+			error_handler(stack, "Error\n");
 		i++;
 	}
 	return (res * sign);

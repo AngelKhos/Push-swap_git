@@ -18,7 +18,9 @@ SRCS=srcs/main.c\
 	srcs/reverse_rotate.c\
 	srcs/rotate.c\
 	srcs/stack_handler.c\
-	srcs/error.c
+	srcs/error.c\
+	srcs/utils.c\
+	srcs/sort.c
 
 LIB= libft/libft.a
 INCS= incs/push_swap.h

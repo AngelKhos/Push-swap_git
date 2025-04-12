@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:17:41 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 01:55:22 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/12 19:07:48 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack
 {
 	int				content;
+	int				normalized;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
@@ -36,6 +37,9 @@ void	free_stack(t_stack *stack);
 int		check_error(int ac, char **av);
 void	error_handler(t_stack *stack, char *str);
 int		ft_atol(char *s, t_stack *stack);
+int		is_sort(t_stack *stack);
+int		is_rev_sort(t_stack *stack);
+void	sort(t_stack **a, t_stack **b);
 
 ////////////////////////////////////////////////////////////////
 
