@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 01:46:24 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/13 17:11:25 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/13 17:26:02 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int	ft_atol(char *s, t_stack *stack)
 	while (s[i] >= '0' && s[i] <= '9')
 	{
 		res = res * 10 + (s[i] - '0');
-		if (res > INT_MAX || (res * sign) < INT_MIN)
+		printf("Result = %d\n", res > INT_MAX);
+		if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
 			error_handler(stack, "Error\n");
 		i++;
 	}
