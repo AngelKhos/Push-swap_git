@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 08:53:43 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 18:01:14 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/13 17:10:46 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	swap(t_stack *stack)
 {
-	int tmp_content;
-	int tmp_normal;
-	
+	int	tmp_content;
+	int	tmp_normal;
+
 	tmp_content = stack->next->content;
 	stack->next->content = stack->content;
 	stack->content = tmp_content;

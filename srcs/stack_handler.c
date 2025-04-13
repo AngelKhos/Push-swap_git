@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   stack_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:47:31 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 01:34:18 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/13 17:10:32 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ t_stack	*stack_new(int content)
 	return (new);
 }
 
-int stack_size(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
-	int size;
-	t_stack *root;
-	
+	int		size;
+	t_stack	*root;
+
 	root = stack;
 	size = 1;
 	if (!root)
@@ -63,12 +63,12 @@ int stack_size(t_stack *stack)
 	return (size);
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-	t_stack *del_node;
-	int size;
-	int i;
-	
+	t_stack	*del_node;
+	int		size;
+	int		i;
+
 	size = stack_size(stack);
 	i = 0;
 	if (!stack)

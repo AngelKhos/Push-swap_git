@@ -6,7 +6,7 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:34:46 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/11 14:24:31 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/13 17:08:11 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	push(t_stack **from, t_stack **to)
 {
-	t_stack *to_push;
+	t_stack	*to_push;
 
 	to_push = *from;
 	if (stack_size(*from) > 1)
@@ -44,5 +44,5 @@ void	push_a(t_stack **b, t_stack **a)
 void	push_b(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	ft_printf("pa\n");
+	ft_printf("pb\n");
 }

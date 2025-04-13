@@ -6,25 +6,25 @@
 /*   By: authomas <authomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 01:46:24 by authomas          #+#    #+#             */
-/*   Updated: 2025/04/12 19:05:52 by authomas         ###   ########lyon.fr   */
+/*   Updated: 2025/04/13 17:11:25 by authomas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-void error_handler(t_stack *stack, char *str)
+void	error_handler(t_stack *stack, char *str)
 {
 	free_stack(stack);
 	ft_putstr_fd(str, 2);
 	exit(EXIT_FAILURE);
 }
 
-int is_sort(t_stack *stack)
+int	is_sort(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < stack_size(stack) - 1)
+	while (i < stack_size(stack) - 1)
 	{
 		if (stack->normalized > stack->next->normalized)
 			return (0);
@@ -34,12 +34,12 @@ int is_sort(t_stack *stack)
 	return (1);
 }
 
-int is_rev_sort(t_stack *stack)
+int	is_rev_sort(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack_size(stack) - 1;
-	while(i > 0)
+	while (i > 0)
 	{
 		if (stack->normalized < stack->next->normalized)
 			return (0);
